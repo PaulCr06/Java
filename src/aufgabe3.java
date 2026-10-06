@@ -3,20 +3,67 @@ import java.util.List;
 
 public class aufgabe3 {
 
-    public List<Integer> Summe(List<Integer> vec1,List<Integer> vec2){
-        List<Integer> summe=new ArrayList<>();
-        for(int i=0;i<vec1.size();i++){
-            summe.add(vec1.get(i)+vec2.get(i));
+    public List<Integer> Summe(List<Integer> vec1, List<Integer> vec2) {
+        List<Integer> summe = new ArrayList<>();
+        int c = 0;
+
+        for (int i = vec1.size() - 1; i >= 0; i--) {
+
+            int currentSum = vec1.get(i) + vec2.get(i) + c;
+
+            summe.add(0, currentSum % 10);//insereaza la inceput
+
+            c = currentSum / 10;
         }
+        if (c > 0) {
+            summe.add(0, c);
+        }
+
         return summe;
-
     }
-    public List<Integer> Differenz(List<Integer> vec1,List<Integer> vec2){
-        List<Integer> diff=new ArrayList<>();
-        for(int i=0;i<vec1.size();i++){
-            diff.add(vec1.get(i)+vec2.get(i));
-        }
-        return diff;
+    public List<Integer> Differenz(List<Integer> vec1, List<Integer> vec2) {
+        List<Integer> diferenta = new ArrayList<>();
+        int borrow = 0;
 
+
+        for (int i = vec1.size() - 1; i >= 0; i--) {
+
+            int diff = vec1.get(i) - vec2.get(i) - borrow;
+
+            if (diff < 0) {
+                diff += 10;
+                borrow = 1;
+            } else {
+                borrow = 0;
+            }
+
+
+            diferenta.add(0, diff);
+        }
+
+
+        while (diferenta.size() > 1 && diferenta.get(0) == 0) {
+            diferenta.remove(0);
+        }
+
+        return diferenta;
+    }
+    public List<Integer> Multiplikation(List<Integer> vec1,int nr) {
+        List<Integer> produkt = new ArrayList<>();
+        int c = 0;
+
+        for (int i = vec1.size() - 1; i >= 0; i--) {
+
+            int currentSum = (vec1.get(i) *nr)+c;
+
+            produkt.add(0, currentSum % 10);//insereaza la inceput
+
+            c = currentSum / 10;
+        }
+        if (c > 0) {
+            produkt.add(0, c);
+        }
+
+        return produkt;
     }
 }
