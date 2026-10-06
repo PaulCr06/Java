@@ -4,6 +4,8 @@ void main() {
 
     List<Integer> vec = List.of(29, 37, 38, 41, 84, 67);
     List<Integer> vec2 = List.of(4, 8, 3, 10, 17);
+    List<Integer> zahl1 = List.of(1 ,3, 0,0 ,0 ,0, 0, 0, 0);
+    List<Integer> zahl2 = List.of(8, 7, 0,0, 0, 0, 0, 0, 0);
 
     aufgabe1 auf = new aufgabe1();
     aufgabe2 auf2=new aufgabe2();
