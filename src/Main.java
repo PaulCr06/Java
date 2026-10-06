@@ -9,6 +9,8 @@ void main() {
 
     aufgabe1 auf = new aufgabe1();
     aufgabe2 auf2=new aufgabe2();
+    aufgabe3 auf3=new aufgabe3();
+
 
     System.out.println(auf.NichtAusreichendeNoten(vec));
     float medie = auf.Durchschnitt(vec);
@@ -24,5 +26,6 @@ void main() {
     System.out.println(auf2.MaximaleSummeVon(vec2));
     System.out.print("minimale summe von n-1 zahlen ");
     System.out.println(auf2.MinimaleSummeVon(vec2));
+    System.out.println(auf3.Summe(zahl1,zahl2));
 
 }
