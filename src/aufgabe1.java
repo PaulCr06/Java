@@ -26,4 +26,33 @@ public class aufgabe1
         }
         return sum/vec.size();
     }
+    public List<Integer> AufRunden(List<Integer> vec) {
+
+        List<Integer> result = new ArrayList<>();
+        for (int i=0;i<vec.size();i++) {
+
+            int aux= vec.get(i);
+            while(aux%5!=0){
+                aux++;
+            }
+            if (aux-vec.get(i)<3 && vec.get(i)>=38) {
+                result.add(aux);
+            }
+            else{
+
+                result.add(vec.get(i));
+            }
+
+        }
+
+        return result;
+    }
+    public int HochsteNote(List<Integer> vec){
+        int max=0;
+        for( int nota:vec){
+            if(nota>max)
+                max=nota;
+        }
+        return  max;
+    }
 }
