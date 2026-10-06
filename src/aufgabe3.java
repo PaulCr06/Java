@@ -66,4 +66,28 @@ public class aufgabe3 {
 
         return produkt;
     }
+    public List<Integer> Division(List<Integer> vec1, int nr) {
+        if (nr == 0) {
+            throw new IllegalArgumentException("Împărțirea la zero nu este permisă!");
+        }
+
+        List<Integer> cat = new ArrayList<>();
+        int carry = 0;
+        for (int i = 0; i < vec1.size(); i++) {
+
+            int current = (carry * 10) + vec1.get(i);
+
+
+            cat.add(current / nr);
+
+            carry = current % nr;
+        }
+
+
+        while (cat.size() > 1 && cat.get(0) == 0) {
+            cat.remove(0);
+        }
+
+        return cat;
+    }
 }
