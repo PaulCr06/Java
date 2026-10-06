@@ -14,4 +14,16 @@ public class aufgabe1
 
         return newvec;
     }
+
+    public float Durchschnitt(List<Integer>vec){
+        if (vec.isEmpty()) {
+            return 0.0f;
+        }
+
+        float sum=0;
+        for (int nota : vec) {
+            sum+=nota;
+        }
+        return sum/vec.size();
+    }
 }

@@ -8,4 +8,6 @@ void main() {
 
 
     System.out.println(auf.NichtAusreichendeNoten(vec));
+    float medie = auf.Durchschnitt(vec);
+    System.out.printf("Durchschnitt: %.2f\n", medie);
 }
