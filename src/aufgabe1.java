@@ -1,19 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class aufgabe1
 {
-    public int CateNoteDeTrecere(int[]vec){
-        int ct=0;
-        for(int i=0;i< vec.length;i++){
-            if(vec[i]>40)
-               ct++;
-        }
-        return ct;
-    }
-    public int[] NichtAusreichendeNoten(int []vec){
-        int []newvec=new int[vec.length-CateNoteDeTrecere(vec)];
-        int l=0;
-        for(int i=0;i< vec.length;i++){
-            if(vec[i]<40)
-                newvec[l++]=vec[i];
+    public List<Integer> NichtAusreichendeNoten(List<Integer> vec) {
+        List<Integer> newvec = new ArrayList<>();
+
+        for (int nota : vec) {
+            if (nota < 40) {
+                newvec.add(nota);
+            }
         }
 
         return newvec;
