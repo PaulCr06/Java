@@ -1,3 +1,5 @@
+package hausaufgabe1;
+
 public class buch {
     private String titel;
     private String autor;
