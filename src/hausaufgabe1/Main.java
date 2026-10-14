@@ -16,7 +16,7 @@ void main() {
     biblioteca.buchHinzufuegen(carte3);
     biblioteca.buchHinzufuegen(carte4);
     biblioteca.buchHinzufuegen(carte5);
-    IO.println("Welche Ubung wollen Sie losen(1-5): ");
+    IO.println("Welche Ubung wollen Sie losen(1-6): ");
     String choice= IO.readln();
     switch (choice){
         case "1":
@@ -58,6 +58,24 @@ void main() {
             }
             IO.println(biblioteca.MostExpensiveBuch(carti).getTitel()+"("+biblioteca.MostExpensiveBuch(carti).getPreis()+" Euro)");
             break;
+        case "5":
+            //aufgabe 5
+            List<buch> carti2 = List.of(carte1,carte2,carte3);
+            IO.print("Mindestanzahl: ");
+            int cate= Integer.parseInt(IO.readln());
+            for(buch b:biblioteca.Mindestssetenanzahl(carti2,cate)) {
+                IO.println(b.getTitel());
+            }
+            break;
+        case "6":
+            IO.print("Budget: ");
+            int budget= Integer.parseInt(IO.readln());
+            buch buch1=biblioteca.ZweiBuecherInnerhalbBudgets(biblioteca.getBuecher(),budget).get(0);
+            buch buch2=biblioteca.ZweiBuecherInnerhalbBudgets(biblioteca.getBuecher(),budget).get(1);
+            IO.println(buch1.getTitel()+" + "+buch2.getTitel());
+            IO.println("Gesamtpreis: "+(buch1.getPreis()+buch2.getPreis())+" Euro");
+        }
+
 
 
     }
@@ -72,4 +90,4 @@ void main() {
 
 
 
-}
+

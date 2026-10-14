@@ -64,6 +64,62 @@ public class bibliothek {
             }
             return maxbuch;
         }
+    public List<buch> Mindestssetenanzahl(List<buch> bucher,int  minanzahl){
+        List<buch> GuteBucher = new ArrayList<>();
+        for(buch b :bucher){
+            if (b.getSeitenanzahl()>=minanzahl){
+                GuteBucher.add(b);
+            }
+        }
+        return GuteBucher;
+    }
+    public List<buch> ZweiBuecherInnerhalbBudgets(List<buch> alleBuecher, int budget) {
+        List<buch> bestesPaar = new ArrayList<>();
+        buch bestesBuch1 = null;
+        buch bestesBuch2 = null;
+
+        int maxPreis = -1;
+        int maxSeiten = -1;
+
+        for (int i = 0; i < alleBuecher.size(); i++) {
+
+            for (int j = i + 1; j < alleBuecher.size(); j++) {
+                buch b1 = alleBuecher.get(i);
+                buch b2 = alleBuecher.get(j);
+
+                int gemeinsamerPreis = b1.getPreis() + b2.getPreis();
+
+
+                if (gemeinsamerPreis <= budget) {
+                    int gemeinsameSeiten = b1.getSeitenanzahl() + b2.getSeitenanzahl();
+
+
+                    if (gemeinsamerPreis > maxPreis) {
+                        maxPreis = gemeinsamerPreis;
+                        maxSeiten = gemeinsameSeiten;
+                        bestesBuch1 = b1;
+                        bestesBuch2 = b2;
+                    }
+
+                    else if (gemeinsamerPreis == maxPreis) {
+                        if (gemeinsameSeiten > maxSeiten) {
+                            maxSeiten = gemeinsameSeiten;
+                            bestesBuch1 = b1;
+                            bestesBuch2 = b2;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        if (bestesBuch1 != null && bestesBuch2 != null) {
+            bestesPaar.add(bestesBuch1);
+            bestesPaar.add(bestesBuch2);
+        }
+
+        return bestesPaar;
+    }
 
     }
 
