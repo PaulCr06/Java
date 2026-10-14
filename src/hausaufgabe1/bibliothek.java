@@ -31,17 +31,19 @@ public class bibliothek {
 
             return gefundeneBuecher;
         }
-        public float DurchschnittSeitenAnzahl(List<String> titluri){
-            float sum=0;
-            for(String titlu : titluri){
-                for(buch b :buecher){
-                    if(Objects.equals(b.getTitel(), titlu)){
-                        sum+=b.getSeitenanzahl();
-                    }
-                }
+        public float DurchschnittSeitenAnzahl(List<buch> uebergebeneBuecher) {
+            if (uebergebeneBuecher == null || uebergebeneBuecher.isEmpty()) {
+                return 0;
             }
-            return  sum/ titluri.size();
+
+            float sum = 0;
+            for (buch b : uebergebeneBuecher) {
+                sum += b.getSeitenanzahl();
+            }
+
+            return sum / uebergebeneBuecher.size();
         }
+
         public List<buch> PreislimitBucher(List<buch> bucher,int  maxpreis){
             List<buch> GuteBucher = new ArrayList<>();
             for(buch b :bucher){

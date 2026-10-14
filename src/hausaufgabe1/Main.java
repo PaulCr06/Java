@@ -26,14 +26,24 @@ void main() {
             IO.println(b.getTitel());
         }
     }
-
-     //aufgabe 2
-    List<String> titluri= List.of("Clean Code","1984","Animal Farm");
-    for(String titlu:titluri){
-        IO.println(titlu);
-    }
-    System.out.printf(Locale.US, "%.2f%n", biblioteca.DurchschnittSeitenAnzahl(titluri));
     */
+     //aufgabe 2
+    List<String> titluri = List.of("Clean Code", "1984", "Animal Farm");
+    List<buch> ausgewaehlteBuecher = new ArrayList<>();
+
+    for (String titlu : titluri) {
+        for (buch b : biblioteca.getBuecher()) {
+            if (Objects.equals(b.getTitel(), titlu)) {
+
+                IO.println(b.getTitel());
+
+                ausgewaehlteBuecher.add(b);
+                break;
+            }
+        }
+    }
+    System.out.printf(Locale.US, "%.2f%n", biblioteca.DurchschnittSeitenAnzahl(ausgewaehlteBuecher));
+
     //aufgabe 3
     IO.print("Maximaler Preis: ");
     String input = IO.readln();
@@ -43,5 +53,7 @@ void main() {
     for( buch carte:biblioteca.PreislimitBucher(biblioteca.getBuecher(),maxpreis)){
         IO.println(carte.getTitel());
     }
+
+
 
 }
