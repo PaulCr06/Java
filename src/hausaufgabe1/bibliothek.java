@@ -53,5 +53,17 @@ public class bibliothek {
             }
             return GuteBucher;
         }
+        public buch MostExpensiveBuch(List<buch> bucher){
+            buch maxbuch = null;
+            int max=0;
+            for( buch b :bucher){
+                if(b.getPreis()>max) {
+                    max = b.getPreis();
+                    maxbuch = b;
+                }
+            }
+            return maxbuch;
+        }
+
     }
 
