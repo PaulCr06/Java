@@ -18,7 +18,7 @@ public class buch {
     public int getPreis() { return preis; }
     public int getSeitenanzahl() { return seitenanzahl; }
 
-
+    @Override
     public String toString() {
         return titel + ", " + autor + ", " + preis + " Euro, " + seitenanzahl + " Seiten";
     }
