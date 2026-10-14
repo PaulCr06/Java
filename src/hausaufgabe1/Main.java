@@ -17,12 +17,16 @@ void main() {
     biblioteca.buchHinzufuegen(carte4);
     biblioteca.buchHinzufuegen(carte5);
     //aufgabe 1
-    /*IO.print("Autor: ");
+    IO.print("Autor: ");
     String autor = IO.readln();
-    for (buch b : biblioteca.findeBuecherVonAutor(autor)) {
-        IO.println(b.getTitel());
+    if(biblioteca.findeBuecherVonAutor(autor).isEmpty())
+        IO.println("Es gibt keine Buecher von diesem Autor");
+    else{
+        for (buch b : biblioteca.findeBuecherVonAutor(autor)) {
+            IO.println(b.getTitel());
+        }
     }
-    */
+
 
 
 }
