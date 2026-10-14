@@ -17,7 +17,7 @@ void main() {
     biblioteca.buchHinzufuegen(carte4);
     biblioteca.buchHinzufuegen(carte5);
     //aufgabe 1
-    IO.print("Autor: ");
+    /*IO.print("Autor: ");
     String autor = IO.readln();
     if(biblioteca.findeBuecherVonAutor(autor).isEmpty())
         IO.println("Es gibt keine Buecher von diesem Autor");
@@ -26,6 +26,13 @@ void main() {
             IO.println(b.getTitel());
         }
     }
+    */
+     //aufgabe 2
+    List<String> titluri= List.of("Clean Code","1984","Animal Farm");
+    for(String titlu:titluri){
+        IO.println(titlu);
+    }
+    System.out.printf(Locale.US, "%.2f%n", biblioteca.DurchschnittSeitenAnzahl(titluri));
 
 
 

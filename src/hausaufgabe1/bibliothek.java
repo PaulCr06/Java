@@ -31,5 +31,16 @@ public class bibliothek {
 
             return gefundeneBuecher;
         }
+        public float DurchschnittSeitenAnzahl(List<String> titluri){
+            float sum=0;
+            for(String titlu : titluri){
+                for(buch b :buecher){
+                    if(Objects.equals(b.getTitel(), titlu)){
+                        sum+=b.getSeitenanzahl();
+                    }
+                }
+            }
+            return  sum/ titluri.size();
+        }
     }
 
