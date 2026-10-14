@@ -14,7 +14,7 @@ import java.util.List;
             this.buecher.add(buch);
         }
 
-        // Exercițiul 1: Bücher eines Autors
+        // aufgabe 1
         public List<buch> findeBuecherVonAutor(String autor) {
             List<buch> gefundeneBuecher = new ArrayList<>();
 
