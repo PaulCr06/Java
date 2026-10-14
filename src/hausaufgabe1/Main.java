@@ -26,14 +26,22 @@ void main() {
             IO.println(b.getTitel());
         }
     }
-    */
+
      //aufgabe 2
     List<String> titluri= List.of("Clean Code","1984","Animal Farm");
     for(String titlu:titluri){
         IO.println(titlu);
     }
     System.out.printf(Locale.US, "%.2f%n", biblioteca.DurchschnittSeitenAnzahl(titluri));
+    */
+    //aufgabe 3
+    IO.print("Maximaler Preis: ");
+    String input = IO.readln();
 
+    int maxpreis = Integer.parseInt(input.replace("Euro", "").trim());
 
+    for( buch carte:biblioteca.PreislimitBucher(biblioteca.getBuecher(),maxpreis)){
+        IO.println(carte.getTitel());
+    }
 
 }

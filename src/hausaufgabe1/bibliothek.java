@@ -42,5 +42,14 @@ public class bibliothek {
             }
             return  sum/ titluri.size();
         }
+        public List<buch> PreislimitBucher(List<buch> bucher,int  maxpreis){
+            List<buch> GuteBucher = new ArrayList<>();
+            for(buch b :bucher){
+                if (b.getPreis()<=maxpreis){
+                    GuteBucher.add(b);
+                }
+            }
+            return GuteBucher;
+        }
     }
 
